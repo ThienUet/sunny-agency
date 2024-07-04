@@ -5,7 +5,15 @@ import type { DocumentContext } from "next/document";
 
 const MyDocument = () => (
   <Html lang="en">
-    <Head />
+    <Head>
+      <title>My Next.js App</title>
+      <meta
+        name="description"
+        content="This is a description of my Next.js app for SEO purposes."
+      />
+      <meta name="keywords" content="Next.js, SEO, React, Application" />
+      <meta name="author" content="Your Name" />
+    </Head>
     <body>
       <Main />
       <NextScript />
