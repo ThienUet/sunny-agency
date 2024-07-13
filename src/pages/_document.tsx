@@ -13,6 +13,7 @@ const MyDocument = () => (
       />
       <meta name="keywords" content="Next.js, SEO, React, Application" />
       <meta name="author" content="Your Name" />
+      <link rel="stylesheet" href="/libs/fontawesome-6.4.2/css/all.min.css" />
     </Head>
     <body>
       <Main />

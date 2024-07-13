@@ -5,6 +5,7 @@ import "swiper/css/navigation";
 import "swiper/css/effect-fade";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
+import { RiLightbulbFlashFill } from "react-icons/ri";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation, EffectFade } from "swiper/modules";
@@ -66,7 +67,16 @@ export default function SwiperCustom(): React.ReactNode {
             })
           : null}
       </Swiper>
-      <div className={styles.swiper_absolute}>NỘI DUNG TIẾP TỤC TẠI ĐÂY !</div>
+      <div className={styles.swiper_absolute}>
+        <ul className={styles.decoration_list}>
+          <li className={styles.item}>
+            <RiLightbulbFlashFill />
+          </li>
+          <li className={styles.item}></li>
+          <li className={styles.item}></li>
+          <li className={styles.item}></li>
+        </ul>
+      </div>
     </div>
   );
 }
