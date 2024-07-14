@@ -9,7 +9,8 @@ import { RiLightbulbFlashFill } from "react-icons/ri";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation, EffectFade } from "swiper/modules";
-
+import { IoFlash } from "react-icons/io5";
+import { TbCashBanknoteFilled } from "react-icons/tb";
 interface SwiperSlidePoster {
   url: string;
   image_url: string;
@@ -71,10 +72,16 @@ export default function SwiperCustom(): React.ReactNode {
         <ul className={styles.decoration_list}>
           <li className={styles.item}>
             <RiLightbulbFlashFill />
+            <span className={styles.item_title}>Creative</span>
           </li>
-          <li className={styles.item}></li>
-          <li className={styles.item}></li>
-          <li className={styles.item}></li>
+          <li className={styles.item}>
+            <IoFlash />
+            <span className={styles.item_title}>Fast</span>
+          </li>
+          <li className={styles.item}>
+            <TbCashBanknoteFilled />
+            <span className={styles.item_title}>Save</span>
+          </li>
         </ul>
       </div>
     </div>
