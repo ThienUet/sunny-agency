@@ -31,7 +31,7 @@ export default function Footer(): React.ReactNode {
                   &nbsp;&nbsp;&nbsp;&nbsp;Address:
                 </span>
                 <span className={styles.address_content}>
-                  118 Pham Van Dong - Tu Liem - Ha Noi
+                  118 Pham Van Dong - Tu Liem
                 </span>
               </li>
               <li className={styles.address_item}>
@@ -56,7 +56,9 @@ export default function Footer(): React.ReactNode {
                   &nbsp;&nbsp;&nbsp;&nbsp;Skype:
                 </span>
                 <span className={styles.address_content}>
-                  <Link href={"#"}>TheAnh28</Link>
+                  <Link aria-label="profile" href={"#"}>
+                    TheAnh28
+                  </Link>
                 </span>
               </li>
               <li className={styles.address_item}>
@@ -67,6 +69,7 @@ export default function Footer(): React.ReactNode {
             <ul className={styles.social_media_menu}>
               <li className={styles.social_item}>
                 <Link
+                  aria-label="facebook"
                   className="w-full h-full flex justify-center items-center"
                   href={"#"}
                 >
@@ -75,6 +78,7 @@ export default function Footer(): React.ReactNode {
               </li>
               <li className={styles.social_item}>
                 <Link
+                  aria-label="instagram"
                   className="w-full h-full flex justify-center items-center"
                   href={"#"}
                 >
@@ -83,6 +87,7 @@ export default function Footer(): React.ReactNode {
               </li>
               <li className={styles.social_item}>
                 <Link
+                  aria-label="telegram"
                   className="w-full h-full flex justify-center items-center"
                   href={"#"}
                 >
@@ -95,22 +100,34 @@ export default function Footer(): React.ReactNode {
             <span className={styles.title}>Direction</span>
             <ul className={styles.address_menu}>
               <li className={styles.address_item}>
-                <Link href={"#"}>Home - Go to our Home Page</Link>
+                <Link aria-label="homepage" href={"#"}>
+                  Home - Go to our Home Page
+                </Link>
               </li>
               <li className={styles.address_item}>
-                <Link href={"#"}>Rental services - All services</Link>
+                <Link aria-label="service-page" href={"#"}>
+                  Rental services - All services
+                </Link>
               </li>
               <li className={styles.address_item}>
-                <Link href={"#"}>Process - Watch your process</Link>
+                <Link aria-label="process-page" href={"#"}>
+                  Process - Watch your process
+                </Link>
               </li>
               <li className={styles.address_item}>
-                <Link href={"#"}>Reviews - Some reviews of customer</Link>
+                <Link aria-label="reviews" href={"#"}>
+                  Reviews - Some reviews of customer
+                </Link>
               </li>
               <li className={styles.address_item}>
-                <Link href={"#"}>Facebook News - Tus, Tricks of Facebook</Link>
+                <Link aria-label="news" href={"#"}>
+                  Facebook News - Tus, Tricks of Facebook
+                </Link>
               </li>
               <li className={styles.address_item}>
-                <Link href={"#"}>Contact us - How to contact us</Link>
+                <Link aria-label="contact" href={"#"}>
+                  Contact us - How to contact us
+                </Link>
               </li>
             </ul>
           </li>

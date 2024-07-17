@@ -11,6 +11,7 @@
   "dependencies": {
     "@ant-design/cssinjs": "^1.21.0",
     "antd": "^5.18.3",
+    "aos": "^2.3.4",
     "i": "^0.3.7",
     "next": "14.2.4",
     "npm": "^10.8.2",
@@ -22,6 +23,7 @@
     "swiper": "^10.0.0"
   },
   "devDependencies": {
+    "@types/aos": "^3.0.7",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

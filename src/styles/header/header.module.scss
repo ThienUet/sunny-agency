@@ -42,8 +42,11 @@
     }
   }
   .logo {
-    width: 15%;
+    width: 14%;
     position: relative;
+    img {
+      -webkit-user-drag: none;
+    }
   }
   .nav_right {
     margin-left: 20px;

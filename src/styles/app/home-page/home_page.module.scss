@@ -1,2 +1,138 @@
+@import "../../variable.scss";
+
 .home_page {
+  .home_content {
+    .content_list {
+      position: relative;
+      .content_item {
+        height: 400px;
+        position: relative;
+        &:nth-child(4) {
+          height: 700px;
+          &::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60%;
+            border: 1px solid rgb(234, 170, 28);
+          }
+        }
+        .content {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          .image_content {
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            position: absolute;
+            z-index: -1;
+          }
+          .paragrap_right,
+          .paragrap_left {
+            position: absolute;
+            top: 50%;
+
+            width: 400px;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            .title {
+              display: block;
+              text-align: right;
+              margin-bottom: 20px;
+              font-size: 20px;
+            }
+            .description {
+              display: block;
+              text-align: right;
+            }
+          }
+          .paragrap_left {
+            left: 10%;
+          }
+          .paragrap_right {
+            right: 10%;
+          }
+        }
+        .content {
+          padding-top: 40px;
+          .title {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            .name_site {
+              display: block;
+              text-transform: uppercase;
+            }
+            .title_desc {
+              display: block;
+              font-size: 25px;
+              text-transform: uppercase;
+              color: $primary_color;
+              font-weight: 600;
+            }
+          }
+          .content_list_child {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            .content_item_child {
+              width: 20%;
+              &:nth-child(2) {
+                margin-left: 20px;
+                margin-right: 20px;
+              }
+              &:nth-child(3) {
+                margin-right: 20px;
+              }
+              .icon_and_desc {
+                width: 100%;
+                position: relative;
+                .icon {
+                  width: 100%;
+                  height: 300px;
+                  position: relative;
+                  border-radius: 10px;
+                  overflow: hidden;
+                }
+                .desc {
+                  margin-top: 10px;
+                  text-align: center;
+                  display: block;
+                  font-size: 16px;
+                  text-transform: uppercase;
+                  line-height: 20px;
+                  color: $color_dark;
+                  font-weight: 600;
+                }
+                padding-bottom: 10px;
+                margin-bottom: 20px;
+                &::before {
+                  content: "";
+                  width: 50px;
+                  position: absolute;
+                  bottom: 0;
+                  left: 50%;
+                  transform: translateX(-50%);
+                  border: 1px solid rgb(234, 170, 28);
+                }
+              }
+              .content_content {
+                text-align: center;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }

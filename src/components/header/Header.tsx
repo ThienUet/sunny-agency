@@ -14,10 +14,10 @@ export default function Header(): React.ReactNode {
         </ul>
       </div>
       <div className={styles.logo}>
-        <Link href={"#"}>
+        <Link aria-label="homepage" href={"/"}>
           <Image
             fill
-            src={"/images/logos/logo.jpg"}
+            src={"/images/logos/logo2.png"}
             alt="sunny agency facebook ads, agency facebook ads, sunny agency price"
           />
         </Link>

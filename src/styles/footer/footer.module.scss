@@ -24,6 +24,9 @@
           width: 50%;
           height: 300px;
           position: relative;
+          img {
+            -webkit-user-drag: none;
+          }
         }
         .title {
           text-transform: uppercase;

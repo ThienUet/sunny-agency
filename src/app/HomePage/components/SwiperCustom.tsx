@@ -58,10 +58,10 @@ export default function SwiperCustom(): React.ReactNode {
               return (
                 <SwiperSlide className={styles.swiper_slide} key={key}>
                   <Image
+                    priority={true}
                     fill
                     src={slide.image_url}
                     alt={slide.name}
-                    loading="lazy"
                   />
                 </SwiperSlide>
               );
@@ -69,17 +69,31 @@ export default function SwiperCustom(): React.ReactNode {
           : null}
       </Swiper>
       <div className={styles.swiper_absolute}>
+        <div className={styles.image_loop}>
+          <Image
+            priority={true}
+            fill
+            src={"/images/loop_images/loop_brick.jpg"}
+            alt="sunny agency, sunny ads facebook, agency facebook. the facebook ads services"
+          />
+        </div>
         <ul className={styles.decoration_list}>
           <li className={styles.item}>
-            <RiLightbulbFlashFill />
+            <div className={styles.icon}>
+              <RiLightbulbFlashFill />
+            </div>
             <span className={styles.item_title}>Creative</span>
           </li>
           <li className={styles.item}>
-            <IoFlash />
+            <div className={styles.icon}>
+              <IoFlash />
+            </div>
             <span className={styles.item_title}>Fast</span>
           </li>
           <li className={styles.item}>
-            <TbCashBanknoteFilled />
+            <div className={styles.icon}>
+              <TbCashBanknoteFilled />
+            </div>
             <span className={styles.item_title}>Save</span>
           </li>
         </ul>

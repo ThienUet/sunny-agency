@@ -25,6 +25,13 @@ ul {
   margin: 0;
 }
 
+a {
+  -webkit-user-drag: none;
+}
 a:hover {
   color: #14849a;
+}
+
+img {
+  -webkit-user-drag: none !important;
 }
