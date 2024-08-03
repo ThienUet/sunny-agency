@@ -17,7 +17,7 @@ export default function HomePage(): React.ReactNode {
                 <Image
                   priority={true}
                   fill
-                  src={"/images/banner/banner1.jpeg"}
+                  src={"/images/content/left_content.png"}
                   alt="Sunny agency, the best platform with facebook ads. We, the sunny agency, the best ads service that's works with facebook meta"
                 />
               </div>
@@ -46,7 +46,7 @@ export default function HomePage(): React.ReactNode {
                 <Image
                   priority={true}
                   fill
-                  src={"/images/banner/banner1.jpeg"}
+                  src={"/images/content/right_content.png"}
                   alt="Sunny agency, the best platform with facebook ads. We, the sunny agency, the best ads service that's works with facebook meta"
                 />
               </div>

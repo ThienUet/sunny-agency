@@ -11,6 +11,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation, EffectFade } from "swiper/modules";
 import { IoFlash } from "react-icons/io5";
 import { TbCashBanknoteFilled } from "react-icons/tb";
+import { BsShieldFillCheck } from "react-icons/bs";
 interface SwiperSlidePoster {
   url: string;
   image_url: string;
@@ -58,6 +59,7 @@ export default function SwiperCustom(): React.ReactNode {
               return (
                 <SwiperSlide className={styles.swiper_slide} key={key}>
                   <Image
+                    className="aspect-auto"
                     priority={true}
                     fill
                     src={slide.image_url}
@@ -95,6 +97,12 @@ export default function SwiperCustom(): React.ReactNode {
               <TbCashBanknoteFilled />
             </div>
             <span className={styles.item_title}>Save</span>
+          </li>
+          <li className={styles.item}>
+            <div className={styles.icon}>
+              <BsShieldFillCheck />
+            </div>
+            <span className={styles.item_title}>Security</span>
           </li>
         </ul>
       </div>

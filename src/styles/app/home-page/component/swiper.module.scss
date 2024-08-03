@@ -57,8 +57,12 @@
             border-color: #edae1a;
           }
         }
-        &:nth-child(2) {
+        &:nth-child(2),
+        &:nth-child(3) {
           margin: 0 10%;
+        }
+        &:nth-child(3) {
+          margin-left: 0;
         }
         .item_title {
           margin-top: 5px;

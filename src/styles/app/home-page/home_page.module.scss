@@ -37,22 +37,38 @@
           .paragrap_left {
             position: absolute;
             top: 50%;
-
             width: 400px;
             transform: translateY(-50%);
-            background-color: rgba(0, 0, 0, 0.8);
+            background-color: rgba(0, 0, 0, 0.5);
             color: #fff;
             padding: 20px;
             text-align: center;
+            border-radius: 20px;
+            overflow: hidden;
+            &::before {
+              content: "";
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              width: 102%;
+              height: 102%;
+              transform: translate(-50%, -50%);
+              background-color: rgba(0, 0, 0, 0.1);
+              backdrop-filter: blur(100px);
+              -webkit-backdrop-filter: blur(100px);
+              z-index: -1;
+            }
             .title {
               display: block;
               text-align: right;
               margin-bottom: 20px;
               font-size: 20px;
+              z-index: 1;
             }
             .description {
               display: block;
               text-align: right;
+              z-index: 1;
             }
           }
           .paragrap_left {

@@ -15,7 +15,7 @@ export default function App({ Component, pageProps }: AppProps) {
   useEffect(() => {
     AOS.init({
       easing: "ease-out-cubic",
-      once: true,
+      once: false,
       offset: 200,
     });
   }, []);
