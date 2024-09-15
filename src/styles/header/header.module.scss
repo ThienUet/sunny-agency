@@ -24,9 +24,10 @@
         &:last-child {
           margin-left: 30px;
         }
-        &:hover {
-          color: #dfa38e;
-          cursor: pointer;
+        a {
+          &:hover {
+            color: #dfa38e;
+          }
         }
       }
     }

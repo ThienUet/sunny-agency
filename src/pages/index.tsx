@@ -1,4 +1,4 @@
-import HomePage from "@/app/HomePage/HomePage";
+import HomePage from "@/main/HomePage/HomePage";
 import Head from "next/head";
 
 export default function Home() {

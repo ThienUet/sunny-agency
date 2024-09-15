@@ -1,4 +1,5 @@
 import "@/styles/globals.css";
+import "@/styles/config.scss";
 import type { AppProps } from "next/app";
 import { ConfigProvider } from "antd";
 import AntdThemeConfig from "@/config/AntDesignConfig";

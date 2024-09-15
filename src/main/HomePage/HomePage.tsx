@@ -83,7 +83,7 @@ export default function HomePage(): React.ReactNode {
                       <Image
                         fill
                         src={"/images/reputation/save.png"}
-                        alt="sunny agency, best facebook marketing resource, best account for maketting run ads"
+                        alt="sunny agency, best facebook marketing resource, best account for marketing run ads"
                       />
                     </div>
                     <span className={styles.desc}>
@@ -103,7 +103,7 @@ export default function HomePage(): React.ReactNode {
                       <Image
                         fill
                         src={"/images/reputation/location.png"}
-                        alt="sunny agency, best facebook marketing resource, best account for maketting run ads"
+                        alt="sunny agency, best facebook marketing resource, best account for marketing run ads"
                       />
                     </div>
                     <span className={styles.desc}>
@@ -123,7 +123,7 @@ export default function HomePage(): React.ReactNode {
                       <Image
                         fill
                         src={"/images/reputation/safe.png"}
-                        alt="sunny agency, best facebook marketing resource, best account for maketting run ads"
+                        alt="sunny agency, best facebook marketing resource, best account for marketing run ads"
                       />
                     </div>
                     <span className={styles.desc}>

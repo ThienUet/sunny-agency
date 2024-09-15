@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "./variable.scss";
+@font-face {
+  font-family: "SunnyAgencyFont";
+  src: url("/fonts/titillium_web/TitilliumWeb-Regular.ttf");
+  font-weight: normal;
+  font-size: 13px;
+}
+@font-face {
+  font-family: "SunnyAgencySpecial";
+  src: url("/fonts/DancingScript/DancingScript-Regular.ttf");
+  font-weight: normal;
+  font-size: 13px;
+}
+html {
+  scroll-behavior: smooth;
+}
+html,
+body,
+#__next {
+  font-family: "SunnyAgencyFont", sans-serif;
+  user-select: none;
+  -moz-user-select: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  cursor: url("/images/cursor/pointer.png"), context-menu;
+
+  &::-webkit-scrollbar {
+    width: 5px; /* Chiều rộng của thanh cuộn */
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $primary_color;
+    border-radius: 30px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+}
+
+a {
+  cursor: url("/images/cursor/link.png"), text !important;
+  text-decoration: none;
+  color: inherit;
+  transition: all ease 0.1s;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  &::after {
+    cursor: url("/images/cursor/link.png"), pointer !important;
+  }
+}
