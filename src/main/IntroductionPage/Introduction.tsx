@@ -1,6 +1,49 @@
 import React from "react";
 import styles from "@/styles/app/introduction-page/introduction_page.module.scss";
 import ImageNew from "@/components/CustomImage/ImageNew";
+import { AiFillCheckCircle } from "react-icons/ai";
+
+interface IntroItem {
+  title: React.ReactNode | string;
+  imageUrl: string;
+  altImage: string;
+  content: string;
+}
+const contentArr: Array<IntroItem> = [
+  {
+    title: <h4 className={styles.item_title}>Limited Liability Company</h4>,
+    imageUrl: "/images/banner/introbanner2.jpg",
+    altImage: "Sunny Agency Limited Liability Company",
+    content: `Our company is a single-member limited liability company,
+              established in 2018. With a background as a long-time employee at
+              a Facebook service company, I understand the platform deeply and
+              am committed to providing the best services to those in need of
+              what Facebook has to offer.`,
+  },
+  {
+    title: <h4 className={styles.item_title}>Facebook Account Resources</h4>,
+    imageUrl: "/images/introduction/fbResource.png",
+    altImage: "Sunny Agency - Reliable Facebook Account Services",
+    content:
+      "We dedicated to providing secure and trustworthy Facebook account resources for our partners. With extensive experience in the industry, we ensure that our clients receive high-quality accounts that meet their needs for advertising, engagement, and other Facebook-related activities. Our commitment to reliability and safety makes us a preferred choice for businesses looking to leverage Facebook's platform effectively.",
+  },
+  {
+    title: (
+      <h4 className={styles.item_title}>Your Reliable Facebook Partner</h4>
+    ),
+    imageUrl: "/images/introduction/parner.png",
+    altImage: "Sunny Agency - Quick and Trustworthy Services",
+    content:
+      "We dedicated to providing secure and trustworthy Facebook account resources for our partners. Our team is renowned for its rapid response times, ensuring that any inquiries or issues are addressed promptly. We pride ourselves on delivering seamless and efficient support, making us a preferred choice for businesses looking to leverage Facebook's platform effectively.",
+  },
+  {
+    title: <h4 className={styles.item_title}>Premier Account Solutions</h4>,
+    imageUrl: "/images/introduction/solution.png",
+    altImage: "Sunny Agency - Secure and Efficient Services",
+    content:
+      "Established in 2018, Sunny Agency specializes in providing top-tier Facebook account resources with a focus on security and reliability. Our team is committed to delivering prompt customer service, ensuring all inquiries are handled swiftly and efficiently. We also prioritize the security of your transactions, utilizing advanced encryption methods to safeguard your financial information. Trust Sunny Agency for a seamless and secure experience on Facebook.",
+  },
+];
 export default function Introduction(): React.ReactNode {
   return (
     <>
@@ -27,27 +70,44 @@ export default function Introduction(): React.ReactNode {
           </p>
         </div>
       </div>
-      <div className={styles.content_left}>
-        <div className={styles.content_for_right}>
+      <div className={styles.introduction_layout}>
+        <h3 className={styles.title}>Introduction Sunny Agency</h3>
+        <ul className={styles.layout}>
+          {contentArr.map((item, index) => (
+            <li className={styles.layout_item} key={index}>
+              {item.title}
+              <ImageNew
+                classNameParent={styles.item_image_parent}
+                fill
+                objectFit={"cover"}
+                src={item.imageUrl}
+                alt={item.altImage}
+              />
+              <p className={styles.item_content}>{item.content}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div className={styles.trust}>
+        <h3 className={styles.trust_title}>Believe In Us</h3>
+        <div className={styles.trust_content}>
           <ImageNew
-            classNameImage={styles.content_for_left_image}
-            fill={true}
-            src=""
-            alt="Sunny Agency Image About Facebook Ads 2st Service"
+            classNameParent={styles.trust_image}
+            fill
+            src="/images/introduction/believe.png"
+            alt="Trust Sunny Agency Service, All will be yours ! Agency Trust Service Facebook Ads, FaceBook Resources"
           />
+          <div className={styles.content}>
+            <h3 className={styles.title}>How do we work ?</h3>
+            <p className={styles.paragraph}>
+              {`Rely on us for all your Facebook account and resource needs.
+              Simply reach out to us, and we’ll handle the rest. We accept
+              payments in USDT, BTC, and more. Contact us today and experience
+              our seamless service!`}
+            </p>
+            <div className={styles.content_button}></div>
+          </div>
         </div>
-        <div className={styles.content_for_left}>
-          <title className={styles.title}>Reputable & Pioneering</title>
-          <p className={styles.content_left_content}>aaaaaa</p>
-        </div>
-      </div>
-      <div className={styles.content_right}>
-        <title className={styles.title}>Low-Cost & Quality</title>
-        <p className={styles.content_right_content}></p>
-      </div>
-      <div className={styles.content_left}>
-        <title className={styles.title}>Low-Cost & Quality</title>
-        <p className={styles.content_right_content}></p>
       </div>
     </>
   );
