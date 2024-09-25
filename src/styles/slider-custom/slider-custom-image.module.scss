@@ -1,0 +1,25 @@
+@import "../variable.scss";
+.slider_custom_image {
+  display: flex;
+  width: 80%;
+  overflow-x: auto;
+  &::-webkit-scrollbar {
+    height: 5px;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 30px;
+    background-color: $primary_color;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: red;
+  }
+  .slider_image {
+    .image_wrapper {
+      box-sizing: border-box;
+      margin: 0 20px;
+      position: relative;
+      width: 340px;
+      height: 200px;
+    }
+  }
+}

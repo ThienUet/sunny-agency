@@ -48,6 +48,7 @@
     align-items: center;
     color: $color_dark;
     position: relative;
+    background-color: white;
     &::before {
       content: "";
       width: 100px;
@@ -85,8 +86,75 @@
 
 .trust {
   .trust_title {
-    .trust_content {
-      .trust_image {
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+    font-family: "SunnyAgencyBoldFont";
+    color: $primary_color;
+  }
+  .trust_comment {
+    text-align: center;
+    padding-bottom: 20px;
+    font-size: 25px;
+    font-weight: 700;
+  }
+  .trust_content {
+    display: flex;
+    .trust_image {
+      position: relative;
+      width: calc(100% / 2);
+      height: 400px;
+    }
+    .content {
+      width: calc(100% / 2);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      // justify-content: center;
+
+      .title {
+        font-family: "SunnyAgencySpecial", sans-serif;
+        font-size: 30px;
+        color: $primary_color;
+        font-weight: 600;
+        position: relative;
+        &::before {
+          content: "";
+          width: 100px;
+          border: 2px solid $copyright_color;
+          position: absolute;
+          bottom: -10px;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+      .paragraph {
+        width: 80%;
+        margin-top: 20px;
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+.link_to_services {
+  background-color: #d9ffda;
+  padding: 20px 0;
+  text-align: center;
+  margin-top: 30px;
+  .title {
+    font-family: "SunnyAgencyBoldFont", sans-serif;
+    font-size: 30px;
+    color: $primary_color;
+  }
+  .content {
+    font-size: 25px;
+    a {
+      font-weight: bold;
+      color: #009a04;
+      transition: color ease 0.2s;
+      &:hover {
+        color: red;
       }
     }
   }

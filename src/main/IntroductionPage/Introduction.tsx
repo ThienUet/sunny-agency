@@ -2,6 +2,9 @@ import React from "react";
 import styles from "@/styles/app/introduction-page/introduction_page.module.scss";
 import ImageNew from "@/components/CustomImage/ImageNew";
 import { AiFillCheckCircle } from "react-icons/ai";
+import SliderCustomImage from "@/components/SliderCustom/SliderCustomImage";
+import { ImageInterface } from "@/interfaces/ImageArray";
+import Link from "next/link";
 
 interface IntroItem {
   title: React.ReactNode | string;
@@ -42,6 +45,21 @@ const contentArr: Array<IntroItem> = [
     altImage: "Sunny Agency - Secure and Efficient Services",
     content:
       "Established in 2018, Sunny Agency specializes in providing top-tier Facebook account resources with a focus on security and reliability. Our team is committed to delivering prompt customer service, ensuring all inquiries are handled swiftly and efficiently. We also prioritize the security of your transactions, utilizing advanced encryption methods to safeguard your financial information. Trust Sunny Agency for a seamless and secure experience on Facebook.",
+  },
+];
+
+const arrayImages: Array<ImageInterface> = [
+  {
+    src: "/images/introduction/parner.png",
+    alt: "Sunny Agency - Reliable Facebook Account Services",
+  },
+  {
+    src: "/images/introduction/resources.png",
+    alt: "Sunny Agency - Reliable Facebook Account Services",
+  },
+  {
+    src: "/images/introduction/services.png",
+    alt: "Sunny Agency - Reliable Facebook Account Services",
   },
 ];
 export default function Introduction(): React.ReactNode {
@@ -90,6 +108,7 @@ export default function Introduction(): React.ReactNode {
       </div>
       <div className={styles.trust}>
         <h3 className={styles.trust_title}>Believe In Us</h3>
+        <h3 className={styles.trust_comment}>Please read more about us !</h3>
         <div className={styles.trust_content}>
           <ImageNew
             classNameParent={styles.trust_image}
@@ -106,8 +125,15 @@ export default function Introduction(): React.ReactNode {
               our seamless service!`}
             </p>
             <div className={styles.content_button}></div>
+            <SliderCustomImage imageArr={arrayImages} />
           </div>
         </div>
+      </div>
+      <div className={styles.link_to_services}>
+        <h3 className={styles.title}>GET STARTED NOW</h3>
+        <p className={styles.content}>
+          Go to <Link href="/rental-services">Rental Services</Link>
+        </p>
       </div>
     </>
   );

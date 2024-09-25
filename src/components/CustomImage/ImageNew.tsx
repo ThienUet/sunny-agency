@@ -13,6 +13,7 @@ interface ImageNewProps {
   height?: number;
   lazyLoad?: boolean;
   sizes?: string;
+  layout?: string;
 }
 export default function ImageNew(props: ImageNewProps): React.ReactNode {
   const {
@@ -28,6 +29,11 @@ export default function ImageNew(props: ImageNewProps): React.ReactNode {
     objectFit,
     sizes,
   } = props;
+  const [srcImage, setSrcImage] = React.useState(src);
+
+  const handleError = () => {
+    setSrcImage("/images/error/image404.png");
+  };
   return (
     <div className={classNameParent ?? "w-full h-96 relative"}>
       <Image
@@ -37,13 +43,15 @@ export default function ImageNew(props: ImageNewProps): React.ReactNode {
         style={{
           objectFit: objectFit ?? "fill",
         }}
-        objectFit="cover"
         width={width}
         height={height}
-        sizes={sizes ?? "100vw"}
+        sizes={
+          sizes ?? "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        }
         loading={lazyLoad ? "lazy" : "eager"}
-        src={src ?? "/image/error/image404.png"}
+        src={srcImage ?? "/images/error/image404.png"}
         alt={alt ?? "sunny agency facebook ads services"}
+        onError={handleError}
       />
     </div>
   );

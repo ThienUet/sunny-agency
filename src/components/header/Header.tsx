@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "@/styles/header/header.module.scss";
-import Image from "next/image";
 import Link from "next/link";
-import { Router } from "next/router";
+import { Select } from "antd";
+import ImageNew from "../CustomImage/ImageNew";
 
 export default function Header(): React.ReactNode {
   return (
@@ -22,8 +22,11 @@ export default function Header(): React.ReactNode {
       </div>
       <div className={styles.logo}>
         <Link aria-label="homepage" href={"/"}>
-          <Image
+          <ImageNew
             fill
+            classNameParent={styles.logo_image}
+            objectFit={"cover"}
+            priority={true}
             src={"/images/logos/logo2.png"}
             alt="sunny agency facebook ads, agency facebook ads, sunny agency price"
           />
@@ -39,6 +42,22 @@ export default function Header(): React.ReactNode {
           </li>
           <li className={styles.item}>
             <Link href={"contact"}>CONTACT US</Link>
+          </li>
+          <li className={styles.item}>
+            <Select
+              style={{ width: 80 }}
+              defaultValue="ENG"
+              options={[
+                {
+                  value: "en",
+                  label: "ENG",
+                },
+                {
+                  value: "ru",
+                  label: "RUS",
+                },
+              ]}
+            />
           </li>
         </ul>
       </div>
