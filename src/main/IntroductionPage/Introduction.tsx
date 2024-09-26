@@ -3,7 +3,7 @@ import styles from "@/styles/app/introduction-page/introduction_page.module.scss
 import ImageNew from "@/components/CustomImage/ImageNew";
 import { AiFillCheckCircle } from "react-icons/ai";
 import SliderCustomImage from "@/components/SliderCustom/SliderCustomImage";
-import { ImageInterface } from "@/interfaces/ImageArray";
+import { ImageInterface } from "@/interfaces/ImageInterface";
 import Link from "next/link";
 
 interface IntroItem {
