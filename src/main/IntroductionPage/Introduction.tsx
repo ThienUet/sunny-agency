@@ -70,6 +70,8 @@ export default function Introduction(): React.ReactNode {
           classNameParent={styles.banner}
           fill={true}
           src="/images/banner/intro_banner.png"
+          priority={true}
+          sizes=""
           alt="Sunny Agency Image About Facebook Ads 2st Service"
         />
         <div className={styles.dialog}>
@@ -114,6 +116,7 @@ export default function Introduction(): React.ReactNode {
             classNameParent={styles.trust_image}
             fill
             src="/images/introduction/believe.png"
+            priority={true}
             alt="Trust Sunny Agency Service, All will be yours ! Agency Trust Service Facebook Ads, FaceBook Resources"
           />
           <div className={styles.content}>

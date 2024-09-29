@@ -1,6 +1,6 @@
 import React, { MutableRefObject } from "react";
 import styles from "@/styles/slider-custom/slider-custom-image.module.scss";
-import { ImageInterface } from "@/interfaces/ImageArray";
+import { ImageInterface } from "@/interfaces/ImageInterface";
 import ImageNew from "../CustomImage/ImageNew";
 
 interface SliderCustomImageProps {
@@ -54,8 +54,6 @@ export default function SliderCustomImage({
     const element = containerRef.current;
 
     if (element) {
-      console.log("YES");
-
       const handleWheel = (event: WheelEvent) => {
         element.scrollLeft += event.deltaY;
         event.preventDefault();

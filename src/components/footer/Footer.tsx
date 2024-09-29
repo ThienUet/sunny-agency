@@ -18,6 +18,8 @@ export default function Footer(): React.ReactNode {
               <Image
                 fill
                 src={"/images/logos/logo.jpg"}
+                priority={true}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 alt="sunny agency logo, sunny agency facebook marketing, sunny agency facebook ads sunny agency facebook advertisement"
               />
             </div>

@@ -1,9 +1,7 @@
 import styles from "@/styles/app/home-page/home_page.module.scss";
 import SwiperCustom from "./components/SwiperCustom";
 import Image from "next/image";
-import { RiLightbulbFlashFill } from "react-icons/ri";
-import { IoFlash } from "react-icons/io5";
-import { TbCashBanknoteFilled } from "react-icons/tb";
+import ImageNew from "@/components/CustomImage/ImageNew";
 
 export default function HomePage(): React.ReactNode {
   return (
@@ -14,7 +12,7 @@ export default function HomePage(): React.ReactNode {
           <li className={styles.content_item} data-aos="fade-left">
             <div className={styles.content}>
               <div className={styles.image_content}>
-                <Image
+                <ImageNew
                   priority={true}
                   fill
                   src={"/images/content/left_content.png"}
@@ -80,9 +78,10 @@ export default function HomePage(): React.ReactNode {
                 <li className={styles.content_item_child}>
                   <div className={styles.icon_and_desc}>
                     <div className={styles.icon}>
-                      <Image
+                      <ImageNew
                         fill
                         src={"/images/reputation/save.png"}
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         alt="sunny agency, best facebook marketing resource, best account for marketing run ads"
                       />
                     </div>
@@ -100,9 +99,10 @@ export default function HomePage(): React.ReactNode {
                 <li className={styles.content_item_child}>
                   <div className={styles.icon_and_desc}>
                     <div className={styles.icon}>
-                      <Image
+                      <ImageNew
                         fill
                         src={"/images/reputation/location.png"}
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         alt="sunny agency, best facebook marketing resource, best account for marketing run ads"
                       />
                     </div>
@@ -120,9 +120,10 @@ export default function HomePage(): React.ReactNode {
                 <li className={styles.content_item_child}>
                   <div className={styles.icon_and_desc}>
                     <div className={styles.icon}>
-                      <Image
+                      <ImageNew
                         fill
                         src={"/images/reputation/safe.png"}
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         alt="sunny agency, best facebook marketing resource, best account for marketing run ads"
                       />
                     </div>
@@ -140,9 +141,10 @@ export default function HomePage(): React.ReactNode {
                 <li className={styles.content_item_child}>
                   <div className={styles.icon_and_desc}>
                     <div className={styles.icon}>
-                      <Image
+                      <ImageNew
                         fill
                         src={"/images/reputation/sercurity.png"}
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         alt="sunny agency, best facebook marketing resource, best account for maketting run ads"
                       />
                     </div>

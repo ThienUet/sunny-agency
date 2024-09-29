@@ -5,7 +5,7 @@ interface ImageNewProps {
   classNameParent?: string;
   classNameImage?: string;
   fill?: boolean;
-  src: string;
+  src?: string;
   alt: string;
   objectFit?: "cover" | "contain" | "fill" | "none" | "scale-down";
   priority?: boolean;
