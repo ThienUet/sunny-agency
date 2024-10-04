@@ -1,0 +1,67 @@
+
+.header_title {
+  font-size: 28px;
+  font-weight: 600;
+  color: #14849a;
+}
+
+.facebook_news_container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.news_page_content {
+  max-width: 1000px;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  padding: 0 1rem;
+}
+
+.wrap_content {
+  display: flex;
+  margin-top: 4rem;
+  gap: 2rem;
+}
+
+.wrap_news_image {
+  width: 280px;
+  object-fit: cover;
+  img {
+    width: 100%;
+    border-radius: 0.6rem;
+  }
+}
+
+.wrap_news_item {
+  display: flex;
+  gap: 1rem; 
+}
+
+.wrap_about_meta {
+  width: 500px;
+  @media only screen and (max-width: 1000px) {
+    display: none;
+  }
+}
+
+.news_area {
+  font-weight: 600;
+  color: rgb(144, 0, 0);
+  font-size: 14px;
+}
+
+.news_title {
+  margin-top: 0.5rem;
+  font-weight: 600;
+}
+
+.news_date {
+  color: rgb(132, 132, 132);
+  font-size: 12px;
+  margin-top: 0.6rem;
+}
+
+.sun_agency_introduce {
+  margin-top: 1rem;
+}
