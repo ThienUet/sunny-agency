@@ -10,7 +10,7 @@ const FacebookNews = () => {
   return(
     <>
     <Head>
-      <title>Sunny Agency | Reviews</title>
+      <title>Sunny Agency | News</title>
     </Head>
     <FacebookNewsPage />
   </>
