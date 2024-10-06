@@ -52,6 +52,7 @@ export default function ImageNew(props: ImageNewProps): React.ReactNode {
         src={srcImage ?? "/images/error/image404.png"}
         alt={alt ?? "sunny agency facebook ads services"}
         onError={handleError}
+        // eslint-disable-next-line react/jsx-no-duplicate-props
       />
     </div>
   );
