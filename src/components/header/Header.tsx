@@ -43,7 +43,7 @@ export default function Header(): React.ReactNode {
           <li className={styles.item}>
             <Link href={"contact"}>CONTACT US</Link>
           </li>
-          <li className={styles.item}>
+          {/* <li className={styles.item}>
             <Select
               style={{ width: 80 }}
               defaultValue="ENG"
@@ -58,7 +58,7 @@ export default function Header(): React.ReactNode {
                 },
               ]}
             />
-          </li>
+          </li> */}
         </ul>
       </div>
     </div>

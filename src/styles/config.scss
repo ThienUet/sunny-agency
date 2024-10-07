@@ -22,6 +22,7 @@
 }
 html {
   scroll-behavior: smooth;
+  width: 100%;
 }
 html,
 body,
@@ -31,8 +32,7 @@ body,
   -moz-user-select: none;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  overflow-x: hidden;
+  max-width: 100%;
   cursor: url("/images/cursor/pointer.png"), context-menu;
 
   &::-webkit-scrollbar {

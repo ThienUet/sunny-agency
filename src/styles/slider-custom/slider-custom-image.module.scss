@@ -2,7 +2,7 @@
 .slider_custom_image {
   display: flex;
   width: 80%;
-  // overflow-x: auto;
+  overflow-x: auto;
   &::-webkit-scrollbar {
     height: 5px;
   }
