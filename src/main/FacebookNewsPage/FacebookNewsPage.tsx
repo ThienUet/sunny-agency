@@ -2,7 +2,7 @@ import React from "react";
 import styles from "@/styles/app/facebook-news-page/facebook_news_page.module.scss";
 import { Divider } from "antd";
 import ImageNew from "@/components/CustomImage/ImageNew";
-
+import styled from "styled-components";
 const news = [
   {
     area: "Meta news",
@@ -116,6 +116,11 @@ const news = [
   },
 ];
 
+const StickyComponent = styled.div`
+  position: sticky !important;
+  top: 0;
+`;
+
 const FacebookNewsPage = () => {
   return (
     <div className={styles.facebook_news_container}>
@@ -152,7 +157,7 @@ const FacebookNewsPage = () => {
           </div>
 
           <div className={styles.wrap_about_meta}>
-            <div style={{ position: "sticky", top: 0 }}>
+            <StickyComponent>
               <ImageNew
                 classNameParent={styles.image_wrap_about}
                 fill
@@ -174,7 +179,7 @@ const FacebookNewsPage = () => {
                 maximize your reach while minimizing costs, ensuring your brand
                 gets the attention it deserves.
               </div>
-            </div>
+            </StickyComponent>
           </div>
         </div>
       </div>

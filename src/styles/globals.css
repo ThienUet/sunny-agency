@@ -1,5 +1,7 @@
 .main {
   position: relative;
+  max-width: 100%;
+  overflow: hidden;
 }
 /* swiper config */
 .swiper-button-prev,
