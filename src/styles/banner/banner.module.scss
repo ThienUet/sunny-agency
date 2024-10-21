@@ -1,0 +1,18 @@
+.banner {
+  .banner_image {
+  }
+  .banner_content {
+    .banner_title {
+      font-size: 30px;
+      font-weight: bold;
+      margin: 20px;
+    }
+    .routes {
+      display: flex;
+      .route {
+        margin-right: 20px;
+        font-size: 20px;
+      }
+    }
+  }
+}

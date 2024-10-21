@@ -29,11 +29,19 @@ export default function Banner(props: BannerProps): React.ReactNode {
         <div className={styles.routes}>
           {breadcrumbs &&
             breadcrumbs.map((breadcrumb, index) => {
-              return (
-                <h3 key={index} className={styles.route}>
-                  {breadcrumb}
-                </h3>
-              );
+              if (index === breadcrumbs.length - 1) {
+                return (
+                  <h3 key={index} className={`${styles.route} italic`}>
+                    {breadcrumb}
+                  </h3>
+                );
+              } else {
+                return (
+                  <h3 key={index} className={styles.route}>
+                    {breadcrumb}
+                  </h3>
+                );
+              }
             })}
         </div>
       </div>
