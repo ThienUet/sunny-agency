@@ -1,17 +1,27 @@
+@import "../variable.scss";
 .banner {
-  .banner_image {
-  }
+  position: relative;
   .banner_content {
+    padding: 10px 20px;
+    position: absolute;
+    background-color: rgba(99, 99, 99, 0.7);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
     .banner_title {
+      text-align: center;
       font-size: 30px;
       font-weight: bold;
       margin: 20px;
+      color: $white_color;
     }
     .routes {
       display: flex;
+      justify-content: space-between;
       .route {
-        margin-right: 20px;
         font-size: 20px;
+        color: $white_color;
       }
     }
   }

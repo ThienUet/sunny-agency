@@ -25,8 +25,8 @@ export default function App({ Component, pageProps }: AppProps) {
       <Head>
         <link rel="icon" href="/favicon.png" />
       </Head>
+      <Header />
       <div className="main">
-        <Header />
         <Component {...pageProps} />
         <Footer />
         <SocialBar />

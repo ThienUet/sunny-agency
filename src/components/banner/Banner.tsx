@@ -19,6 +19,7 @@ export default function Banner(props: BannerProps): React.ReactNode {
         classNameParent={styles.banner_image}
         src={image?.src}
         fill
+        objectFit="cover"
         alt={
           image?.alt ??
           "Sunny Agency Banner Rental Services, Sunny Agency Rental Services"

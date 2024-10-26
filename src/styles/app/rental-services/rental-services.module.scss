@@ -1,0 +1,62 @@
+.rental_content {
+  padding: 30px 0;
+  .rental_list {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-evenly;
+    .rental_item {
+      width: calc(100% / 3 - 20px);
+      //   border: 1px solid gray;
+      border-radius: 10px;
+      box-shadow: -0px 3px 5px 1px gray;
+      padding: 20px 10px;
+      .rental_name {
+        font-size: 17px;
+        font-weight: bold;
+      }
+      .price_and_desc {
+        .price {
+          display: block;
+          margin: 20px 0;
+          font-weight: bold;
+          font-size: 30px;
+        }
+        .desc {
+          display: block;
+          margin-bottom: 20px;
+          color: gray;
+        }
+      }
+      .rental_btn {
+        width: 100%;
+        text-align: center;
+      }
+      .feature {
+        .name {
+          display: block;
+          font-size: 17px;
+          font-weight: bold;
+        }
+        .feature_list {
+          margin-top: 10px;
+          color: gray;
+          .feature_item {
+            margin-bottom: 10px;
+            position: relative;
+            .item_icon {
+              position: absolute;
+              top: 5px;
+              left: 0;
+              font-size: 16px;
+            }
+            .item_content {
+              display: block;
+              padding-left: 23px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

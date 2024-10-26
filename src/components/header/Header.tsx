@@ -16,7 +16,7 @@ export default function Header(): React.ReactNode {
             <Link href={"rental-services"}>RENTAL SERVICES</Link>
           </li>
           <li className={styles.item}>
-            <Link href={"processes"}>PROCESSES</Link>
+            <Link href={"about"}>ABOUT US</Link>
           </li>
         </ul>
       </div>

@@ -19,7 +19,7 @@ $breakpoints: (
 }
 
 .header {
-  overflow: hidden;
+  position: sticky;
   display: flex;
   height: 80px;
   background-color: #00d2ff;
