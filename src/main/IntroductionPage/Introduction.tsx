@@ -63,6 +63,10 @@ const arrayImages: Array<ImageInterface> = [
   },
 ];
 export default function Introduction(): React.ReactNode {
+  const [viewImage, setViewImage] = React.useState<{
+    src: string;
+    alt: string;
+  } | null>(null);
   return (
     <>
       <div className={styles.introduction}>
@@ -99,7 +103,13 @@ export default function Introduction(): React.ReactNode {
                 <AiFillCheckCircle />
               </div>
               <div className={styles.card_title}>{item.title}</div>
-              <div className={styles.card_image_wrapper}>
+              <div
+                className={styles.card_image_wrapper}
+                onClick={() =>
+                  setViewImage({ src: item.imageUrl, alt: item.altImage })
+                }
+                style={{ cursor: "pointer" }}
+              >
                 <ImageNew
                   classNameParent={styles.card_image}
                   fill
@@ -147,6 +157,30 @@ export default function Introduction(): React.ReactNode {
           Go to <Link href="/rental-services">Rental Services</Link>
         </p>
       </div>
+      {viewImage && (
+        <div
+          className={styles.simple_overlay}
+          onClick={() => setViewImage(null)}
+        >
+          <div
+            className={styles.simple_popup}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              className={styles.simple_close}
+              onClick={() => setViewImage(null)}
+              aria-label="Close"
+            >
+              ×
+            </button>
+            <img
+              src={viewImage.src}
+              alt={viewImage.alt}
+              className={styles.simple_image}
+            />
+          </div>
+        </div>
+      )}
     </>
   );
 }
