@@ -76,7 +76,7 @@ export default function Introduction(): React.ReactNode {
         />
         <div className={styles.dialog}>
           <div className={styles.title}>Sunny Agency Ads Services</div>
-          <p className={styles.intro_content} data-aos="fade-left">
+          <p className={styles.intro_content}>
             Sunny Agency is your trusted partner in Facebook advertising,
             committed to delivering affordable, reliable, and high-quality
             services. We specialize in crafting targeted ad campaigns that
@@ -92,21 +92,26 @@ export default function Introduction(): React.ReactNode {
       </div>
       <div className={styles.introduction_layout}>
         <h3 className={styles.title}>Introduction Sunny Agency</h3>
-        <ul className={styles.layout}>
+        <div className={styles.intro_cards}>
           {contentArr.map((item, index) => (
-            <li className={styles.layout_item} key={index}>
-              {item.title}
-              <ImageNew
-                classNameParent={styles.item_image_parent}
-                fill
-                objectFit={"cover"}
-                src={item.imageUrl}
-                alt={item.altImage}
-              />
-              <p className={styles.item_content}>{item.content}</p>
-            </li>
+            <div className={styles.intro_card} key={index}>
+              <div className={styles.card_icon}>
+                <AiFillCheckCircle />
+              </div>
+              <div className={styles.card_title}>{item.title}</div>
+              <div className={styles.card_image_wrapper}>
+                <ImageNew
+                  classNameParent={styles.card_image}
+                  fill
+                  objectFit="cover"
+                  src={item.imageUrl}
+                  alt={item.altImage}
+                />
+              </div>
+              <div className={styles.card_content}>{item.content}</div>
+            </div>
           ))}
-        </ul>
+        </div>
       </div>
       <div className={styles.trust}>
         <h3 className={styles.trust_title}>Believe In Us</h3>
@@ -123,11 +128,15 @@ export default function Introduction(): React.ReactNode {
             <h3 className={styles.title}>How do we work ?</h3>
             <p className={styles.paragraph}>
               {`Rely on us for all your Facebook account and resource needs.
-              Simply reach out to us, and we’ll handle the rest. We accept
+              Simply reach out to us, and we'll handle the rest. We accept
               payments in USDT, BTC, and more. Contact us today and experience
               our seamless service!`}
             </p>
-            <div className={styles.content_button}></div>
+            <div className={styles.content_button}>
+              <Link href="/contact" passHref legacyBehavior>
+                <button type="button">Contact Us</button>
+              </Link>
+            </div>
             <SliderCustomImage imageArr={arrayImages} />
           </div>
         </div>

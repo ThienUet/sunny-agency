@@ -1,12 +1,14 @@
 import styles from "@/styles/app/home-page/home_page.module.scss";
-import SwiperCustom from "./components/SwiperCustom";
+import Banner from "@/components/banner/Banner";
+// import SwiperCustom from "./components/SwiperCustom";
 import Image from "next/image";
 import ImageNew from "@/components/CustomImage/ImageNew";
 
 export default function HomePage(): React.ReactNode {
   return (
     <div className={styles.home_page}>
-      <SwiperCustom />
+      <Banner />
+      {/* <SwiperCustom /> */}
       <div className={styles.home_content}>
         <ul className={styles.content_list}>
           <li className={styles.content_item} data-aos="fade-left">

@@ -3,20 +3,12 @@ import styles from "@/styles/app/rental-services/rental-services.module.scss";
 import Banner from "@/components/banner/Banner";
 import { Button, Divider } from "antd";
 import { FaRegCheckCircle } from "react-icons/fa";
+import { FaStar } from "react-icons/fa";
 
 const breadcrumbs = ["HOME", " > ", "RENTAL SERVICES"];
 export default function RentalServices() {
   return (
     <div className={styles.rental_services}>
-      <Banner
-        image={{
-          src: "/images/rental/rental_service.png",
-          alt: "Sunny Agency Services, Sunny Agency Rental Services",
-        }}
-        className={styles.banner}
-        title="Rental Services"
-        breadcrumbs={breadcrumbs}
-      />
       <div className={styles.rental_content}>
         <ul className={styles.rental_list}>
           <li className={styles.rental_item}>
@@ -63,7 +55,7 @@ export default function RentalServices() {
               </ul>
             </div>
           </li>
-          <li className={styles.rental_item}>
+          <li className={`${styles.rental_item} ${styles.featured}`}>
             <span className={styles.rental_name}>Starter</span>
             <Divider />
             <div className={styles.price_and_desc}>
