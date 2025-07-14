@@ -240,11 +240,11 @@ export default function Banner() {
       {/* Features Section */}
       <div className="relative z-10 bg-gradient-to-r from-cyan-500/90 to-blue-600/90 backdrop-blur-lg">
         <div className="container mx-auto px-6 py-12">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="flex gap-4 overflow-x-auto hide-scrollbar md:grid md:grid-cols-4 md:gap-8">
             {features.map((feature, index) => (
               <div
                 key={index}
-                className="text-center group hover:transform hover:scale-105 transition-all duration-300"
+                className="min-w-[220px] text-center group hover:transform hover:scale-105 transition-all duration-300 md:min-w-0"
               >
                 <div className="bg-white/20 backdrop-blur-lg rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4 group-hover:bg-white/30 transition-all duration-300">
                   {(() => {

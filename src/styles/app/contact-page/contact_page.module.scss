@@ -59,7 +59,7 @@
 }
 
 .form_title {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 700;
   text-align: center;
   color: $primary_color;
@@ -70,6 +70,9 @@
 .address_menu {
   margin-top: 1.5rem;
   padding-left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .address_item {
@@ -103,12 +106,52 @@
   color: $color_dark;
   min-width: 120px;
   transition: color 0.2s;
+  display: flex;
+  align-items: center;
 }
 
 .address_content {
   color: #333;
   font-size: 16px;
   transition: color 0.2s;
+  word-break: break-all;
+}
+
+@media (max-width: 860px) {
+  .address_menu {
+    gap: 10px;
+  }
+  .address_item {
+    font-size: 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    padding: 0.8rem 1rem;
+  }
+  .address_title {
+    min-width: unset;
+    font-size: 1rem;
+    margin-bottom: 2px;
+  }
+  .address_content {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .address_menu {
+    gap: 8px;
+  }
+  .address_item {
+    font-size: 0.95rem;
+    padding: 0.7rem 0.7rem;
+  }
+  .address_title {
+    font-size: 0.98rem;
+  }
+  .address_content {
+    font-size: 14px;
+  }
 }
 
 .wrap_end_image {

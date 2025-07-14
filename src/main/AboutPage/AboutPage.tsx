@@ -4,17 +4,17 @@ import Banner from "@/components/banner/Banner";
 
 const teamMembers = [
   {
-    name: "Nguyễn Văn A",
+    name: "John Doe",
     role: "CEO & Founder",
     image: "/images/user/ye.jpg",
   },
   {
-    name: "Trần Thị B",
+    name: "Jane Smith",
     role: "Marketing Lead",
     image: "/images/user/naomi.jpg",
   },
   {
-    name: "Lê Văn C",
+    name: "Michael Brown",
     role: "Developer",
     image: "/images/user/travis.jpg",
   },
@@ -23,19 +23,17 @@ const teamMembers = [
 export default function AboutPage() {
   return (
     <section className={styles.aboutPageContainer}>
-      
-
       <div className={styles.aboutValues}>
-        <h2>Giá trị cốt lõi</h2>
+        <h2>Core Values</h2>
         <ul>
-          <li>🌟 Sáng tạo không ngừng</li>
-          <li>🤝 Đặt khách hàng làm trung tâm</li>
-          <li>🚀 Cam kết hiệu quả</li>
+          <li>🌟 Relentless Creativity</li>
+          <li>🤝 Customer-Centric Approach</li>
+          <li>🚀 Commitment to Results</li>
         </ul>
       </div>
 
       <div className={styles.aboutTeam}>
-        <h2>Đội ngũ của chúng tôi</h2>
+        <h2>Our Team</h2>
         <div className={styles.aboutTeamList}>
           {teamMembers.map(
             (member: { name: string; role: string; image: string }) => (

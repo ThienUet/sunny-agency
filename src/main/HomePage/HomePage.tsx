@@ -1,8 +1,9 @@
 import styles from "@/styles/app/home-page/home_page.module.scss";
 import Banner from "@/components/banner/Banner";
-// import SwiperCustom from "./components/SwiperCustom";
+import SwiperCustom from "@/components/SliderCustom/SwiperCustom";
 import Image from "next/image";
 import ImageNew from "@/components/CustomImage/ImageNew";
+import { useEffect, useState } from "react";
 
 export default function HomePage(): React.ReactNode {
   return (
@@ -68,104 +69,120 @@ export default function HomePage(): React.ReactNode {
               </div>
             </div>
           </li>
+          {/* Thay thế phần card dịch vụ dạng list bằng SwiperCustom chỉ khi mobile, còn lại giữ layout cũ */}
           <li className={styles.content_item} data-aos="fade-right">
-            <div className={styles.content}>
-              <div className={styles.title}>
-                <span className={styles.name_site}>Sunny Agency</span>
-                <span className={styles.title_desc}>
-                  The Best Platform with Facebook Ads
-                </span>
-              </div>
-              <ul className={styles.content_list_child}>
-                <li className={styles.content_item_child}>
-                  <div className={styles.icon_and_desc}>
-                    <div className={styles.icon}>
-                      <ImageNew
-                        fill
-                        src={"/images/reputation/save.png"}
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        alt="sunny agency, best facebook marketing resource, best account for marketing run ads"
-                      />
-                    </div>
-                    <span className={styles.desc}>
-                      Achieve Budget Savings with High Efficiency
-                    </span>
-                  </div>
-                  <div className={styles.content_content}>
-                    We have a large support team ready to assist our customers
-                    anytime, anywhere. With a customer-centric approach, we
-                    understand and prioritize your needs. We offer a service
-                    that is both cost-effective and highly efficient.
-                  </div>
-                </li>
-                <li className={styles.content_item_child}>
-                  <div className={styles.icon_and_desc}>
-                    <div className={styles.icon}>
-                      <ImageNew
-                        fill
-                        src={"/images/reputation/location.png"}
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        alt="sunny agency, best facebook marketing resource, best account for marketing run ads"
-                      />
-                    </div>
-                    <span className={styles.desc}>
-                      Global Presence, Immediate Service
-                    </span>
-                  </div>
-                  <div className={styles.content_content}>
-                    Interested in our location? We have a presence in most
-                    countries, ensuring quick service delivery to you. Distance
-                    is not an issue for us. Contact us for consultation and to
-                    experience our services.
-                  </div>
-                </li>
-                <li className={styles.content_item_child}>
-                  <div className={styles.icon_and_desc}>
-                    <div className={styles.icon}>
-                      <ImageNew
-                        fill
-                        src={"/images/reputation/safe.png"}
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        alt="sunny agency, best facebook marketing resource, best account for marketing run ads"
-                      />
-                    </div>
-                    <span className={styles.desc}>
-                      Secure, Efficient, Reliable: Trust Our Services
-                    </span>
-                  </div>
-                  <div className={styles.content_content}>
-                    Trust our services for safety, speed, and peace of mind.
-                    With quick transactions and robust security measures, we
-                    ensure your confidence and convenience. Experience a
-                    worry-free service with us.
-                  </div>
-                </li>
-                <li className={styles.content_item_child}>
-                  <div className={styles.icon_and_desc}>
-                    <div className={styles.icon}>
-                      <ImageNew
-                        fill
-                        src={"/images/reputation/sercurity.png"}
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        alt="sunny agency, best facebook marketing resource, best account for maketting run ads"
-                      />
-                    </div>
-                    <span className={styles.desc}>
-                      Secure and Confidential: Our Promise to You
-                    </span>
-                  </div>
-                  <div className={styles.content_content}>
-                    Using our services guarantees absolute customer information
-                    confidentiality and secure transactions. Your data is
-                    protected at all times, ensuring peace of mind with every
-                    interaction.
-                  </div>
-                </li>
-              </ul>
-            </div>
+            {typeof window !== "undefined" ? <ResponsiveServiceCards /> : null}
           </li>
         </ul>
       </div>
+    </div>
+  );
+}
+
+function ResponsiveServiceCards() {
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  if (isMobile) {
+    return <SwiperCustom />;
+  }
+  // Layout cũ dạng 4 card ngang
+  return (
+    <div className={styles.content}>
+      <div className={styles.title}>
+        <span className={styles.name_site}>Sunny Agency</span>
+        <span className={styles.title_desc}>
+          The Best Platform with Facebook Ads
+        </span>
+      </div>
+      <ul className={styles.content_list_child}>
+        <li className={styles.content_item_child}>
+          <div className={styles.icon_and_desc}>
+            <div className={styles.icon}>
+              <ImageNew
+                fill
+                src={"/images/reputation/save.png"}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                alt="sunny agency, best facebook marketing resource, best account for marketing run ads"
+              />
+            </div>
+            <span className={styles.desc}>
+              Achieve Budget Savings with High Efficiency
+            </span>
+          </div>
+          <div className={styles.content_content}>
+            We have a large support team ready to assist our customers anytime,
+            anywhere. With a customer-centric approach, we understand and
+            prioritize your needs. We offer a service that is both
+            cost-effective and highly efficient.
+          </div>
+        </li>
+        <li className={styles.content_item_child}>
+          <div className={styles.icon_and_desc}>
+            <div className={styles.icon}>
+              <ImageNew
+                fill
+                src={"/images/reputation/location.png"}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                alt="sunny agency, best facebook marketing resource, best account for marketing run ads"
+              />
+            </div>
+            <span className={styles.desc}>
+              Global Presence, Immediate Service
+            </span>
+          </div>
+          <div className={styles.content_content}>
+            Interested in our location? We have a presence in most countries,
+            ensuring quick service delivery to you. Distance is not an issue for
+            us. Contact us for consultation and to experience our services.
+          </div>
+        </li>
+        <li className={styles.content_item_child}>
+          <div className={styles.icon_and_desc}>
+            <div className={styles.icon}>
+              <ImageNew
+                fill
+                src={"/images/reputation/safe.png"}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                alt="sunny agency, best facebook marketing resource, best account for marketing run ads"
+              />
+            </div>
+            <span className={styles.desc}>
+              Secure, Efficient, Reliable: Trust Our Services
+            </span>
+          </div>
+          <div className={styles.content_content}>
+            Trust our services for safety, speed, and peace of mind. With quick
+            transactions and robust security measures, we ensure your confidence
+            and convenience. Experience a worry-free service with us.
+          </div>
+        </li>
+        <li className={styles.content_item_child}>
+          <div className={styles.icon_and_desc}>
+            <div className={styles.icon}>
+              <ImageNew
+                fill
+                src={"/images/reputation/sercurity.png"}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                alt="sunny agency, best facebook marketing resource, best account for maketting run ads"
+              />
+            </div>
+            <span className={styles.desc}>
+              Secure and Confidential: Our Promise to You
+            </span>
+          </div>
+          <div className={styles.content_content}>
+            Using our services guarantees absolute customer information
+            confidentiality and secure transactions. Your data is protected at
+            all times, ensuring peace of mind with every interaction.
+          </div>
+        </li>
+      </ul>
     </div>
   );
 }

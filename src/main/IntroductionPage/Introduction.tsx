@@ -62,11 +62,14 @@ const arrayImages: Array<ImageInterface> = [
     alt: "Sunny Agency - Reliable Facebook Account Services",
   },
 ];
+
 export default function Introduction(): React.ReactNode {
-  const [viewImage, setViewImage] = React.useState<{
+  // Di chuyển useState vào đây
+  const [popupImage, setPopupImage] = React.useState<{
     src: string;
     alt: string;
   } | null>(null);
+
   return (
     <>
       <div className={styles.introduction}>
@@ -106,7 +109,7 @@ export default function Introduction(): React.ReactNode {
               <div
                 className={styles.card_image_wrapper}
                 onClick={() =>
-                  setViewImage({ src: item.imageUrl, alt: item.altImage })
+                  setPopupImage({ src: item.imageUrl, alt: item.altImage })
                 }
                 style={{ cursor: "pointer" }}
               >
@@ -157,26 +160,27 @@ export default function Introduction(): React.ReactNode {
           Go to <Link href="/rental-services">Rental Services</Link>
         </p>
       </div>
-      {viewImage && (
+      {/* Popup hiển thị ảnh lớn */}
+      {popupImage && (
         <div
-          className={styles.simple_overlay}
-          onClick={() => setViewImage(null)}
+          className={styles.popup_overlay}
+          onClick={() => setPopupImage(null)}
         >
           <div
-            className={styles.simple_popup}
+            className={styles.popup_content}
             onClick={(e) => e.stopPropagation()}
           >
             <button
-              className={styles.simple_close}
-              onClick={() => setViewImage(null)}
+              className={styles.popup_close}
+              onClick={() => setPopupImage(null)}
               aria-label="Close"
             >
               ×
             </button>
             <img
-              src={viewImage.src}
-              alt={viewImage.alt}
-              className={styles.simple_image}
+              src={popupImage.src}
+              alt={popupImage.alt}
+              className={styles.popup_image}
             />
           </div>
         </div>
