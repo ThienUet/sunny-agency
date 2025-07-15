@@ -6,6 +6,10 @@ import ImageNew from "@/components/CustomImage/ImageNew";
 import { useEffect, useState } from "react";
 
 export default function HomePage(): React.ReactNode {
+  const [isClient, setIsClient] = useState(false);
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
   return (
     <div className={styles.home_page}>
       <Banner />
@@ -69,16 +73,17 @@ export default function HomePage(): React.ReactNode {
               </div>
             </div>
           </li>
-          {/* Thay thế phần card dịch vụ dạng list bằng SwiperCustom chỉ khi mobile, còn lại giữ layout cũ */}
-          <li className={styles.content_item} data-aos="fade-right">
-            {typeof window !== "undefined" ? <ResponsiveServiceCards /> : null}
-          </li>
+          {/* Chỉ render li này ở client để tránh hydration error */}
+          {isClient && (
+            <li className={styles.content_item} data-aos="fade-right">
+              <ResponsiveServiceCards />
+            </li>
+          )}
         </ul>
       </div>
     </div>
   );
 }
-
 function ResponsiveServiceCards() {
   const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
