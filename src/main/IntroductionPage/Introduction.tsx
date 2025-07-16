@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "@/styles/app/introduction-page/introduction_page.module.scss";
 import ImageNew from "@/components/CustomImage/ImageNew";
-import { AiFillCheckCircle } from "react-icons/ai";
+import { AiFillCheckCircle, AiOutlineClose } from "react-icons/ai";
 import SliderCustomImage from "@/components/SliderCustom/SliderCustomImage";
 import { ImageInterface } from "@/interfaces/ImageInterface";
 import Link from "next/link";
@@ -108,17 +108,16 @@ export default function Introduction(): React.ReactNode {
               <div className={styles.card_title}>{item.title}</div>
               <div
                 className={styles.card_image_wrapper}
-                onClick={() =>
-                  setPopupImage({ src: item.imageUrl, alt: item.altImage })
-                }
                 style={{ cursor: "pointer" }}
               >
-                <ImageNew
-                  classNameParent={styles.card_image}
-                  fill
-                  objectFit="cover"
+                <img
                   src={item.imageUrl}
                   alt={item.altImage}
+                  style={{ width: "100%", borderRadius: 12, cursor: "pointer" }}
+                  onClick={() => {
+                    console.log("Clicked image:", item.imageUrl);
+                    setPopupImage({ src: item.imageUrl, alt: item.altImage });
+                  }}
                 />
               </div>
               <div className={styles.card_content}>{item.content}</div>
@@ -163,24 +162,75 @@ export default function Introduction(): React.ReactNode {
       {/* Popup hiển thị ảnh lớn */}
       {popupImage && (
         <div
-          className={styles.popup_overlay}
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            width: "100vw",
+            height: "100vh",
+            background: "rgba(0,0,0,0.5)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            zIndex: 99999,
+          }}
           onClick={() => setPopupImage(null)}
         >
           <div
-            className={styles.popup_content}
+            style={{
+              position: "relative",
+              background: "#fff",
+              padding: 10,
+              borderRadius: 8,
+            }}
             onClick={(e) => e.stopPropagation()}
           >
             <button
-              className={styles.popup_close}
+              style={{
+                position: "absolute",
+                top: 8,
+                right: 8,
+                width: 44,
+                height: 44,
+                borderRadius: "50%",
+                background: "rgba(0,0,0,0.15)",
+                border: "none",
+                color: "#222",
+                fontSize: 28,
+                fontWeight: 700,
+                cursor: "pointer",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                boxShadow: "0 2px 8px rgba(0,0,0,0.12)",
+                transition: "background 0.2s, color 0.2s",
+                padding: 0,
+                lineHeight: 1,
+              }}
+              onMouseOver={(e) => {
+                e.currentTarget.style.background = "rgba(0,0,0,0.35)";
+                e.currentTarget.style.color = "#fff";
+              }}
+              onMouseOut={(e) => {
+                e.currentTarget.style.background = "rgba(0,0,0,0.15)";
+                e.currentTarget.style.color = "#222";
+              }}
               onClick={() => setPopupImage(null)}
               aria-label="Close"
             >
-              ×
+              <AiOutlineClose size={18} />
             </button>
             <img
               src={popupImage.src}
               alt={popupImage.alt}
-              className={styles.popup_image}
+              style={{
+                maxWidth: "90vw",
+                maxHeight: "90vh",
+                width: "auto",
+                height: "auto",
+                display: "block",
+                margin: "0 auto",
+              }}
             />
           </div>
         </div>

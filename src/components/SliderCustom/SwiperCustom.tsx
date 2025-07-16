@@ -39,8 +39,8 @@ const SwiperCustom = ({ data = cardData }) => {
   return (
     <div className={styles.swiper_wrapper}>
       <Swiper
-        modules={[Navigation, Pagination]}
-        navigation
+        modules={[Pagination]}
+        // navigation // bỏ navigation
         pagination={{ clickable: true }}
         spaceBetween={24}
         slidesPerView={1}
@@ -70,4 +70,4 @@ const SwiperCustom = ({ data = cardData }) => {
   );
 };
 
-export default SwiperCustom; 
+export default SwiperCustom;

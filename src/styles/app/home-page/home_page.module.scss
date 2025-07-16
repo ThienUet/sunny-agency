@@ -153,4 +153,95 @@
   }
 }
 
-      
+@media (max-width: 768px) {
+  .home_page {
+    .home_content {
+      .content_list {
+        .content_item {
+          height: auto !important;
+          min-height: 350px;
+          .content {
+            position: static;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            padding-top: 0 !important;
+            .image_content {
+              position: static;
+              width: 100%;
+              height: 180px;
+              min-height: 120px;
+            }
+            .paragrap_right,
+            .paragrap_left {
+              position: absolute !important;
+              left: 50% !important;
+              top: 50% !important;
+              transform: translate(-50%, -50%) !important;
+              width: calc(100% - 20px) !important;
+              max-width: 100%;
+              padding: 12px 10px;
+              box-sizing: border-box;
+              font-size: 15px;
+              border-radius: 12px;
+              margin-top: 0;
+              background-color: rgba(0, 0, 0, 0.5);
+              color: #fff;
+              text-align: center;
+              &::before {
+                display: none !important;
+              }
+              .title {
+                font-size: 17px;
+                margin-bottom: 10px;
+                text-align: center;
+              }
+              .description {
+                text-align: center;
+                font-size: 14px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .home_page {
+    .home_content {
+      .content_list {
+        .content_item {
+          .content {
+            .content_list_child {
+              flex-direction: column;
+              align-items: center;
+              .content_item_child {
+                width: 90%;
+                margin: 0 0 20px 0 !important;
+                .icon_and_desc {
+                  .icon {
+                    height: 120px;
+                  }
+                  .desc {
+                    font-size: 14px;
+                  }
+                }
+                .content_content {
+                  font-size: 13px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .SwiperCustom_image {
+    width: 120px !important;
+    height: 120px !important;
+    max-width: 90vw;
+    max-height: 40vw;
+    object-fit: contain;
+    margin: 0 auto;
+    display: block;
+  }
+}

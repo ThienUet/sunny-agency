@@ -181,3 +181,19 @@
     padding: 32px 10vw;
   }
 }
+
+@media (max-width: 480px) {
+  .rental_content {
+    padding: 0 16px !important;
+    margin-top: 40px !important; // Tăng mạnh margin-top để tránh dính header
+  }
+  .rental_list {
+    gap: 12px;
+  }
+  .rental_item {
+    min-width: 100vw;
+    max-width: 100vw;
+    box-sizing: border-box;
+    padding: 20px 16px !important;
+  }
+}
